@@ -211,20 +211,20 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Matrimonio Enrico e Michela",
+            title: "Matrimonio Matteo e Aqila",
 
             // Event start date
-            start: new Date('Jun 08, 2019 16:00'),
+            start: new Date('Sept 19, 2025 11:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Jun 09, 2019 00:00'),
+            end: new Date('Sept 20, 2025 00:00'),
 
             // Event Address
-            address: 'Biblioteca Classense, Ravenna',
+            address: 'Palazzo Albornoz, Cesena',
 
             // Event Description
             // description: "We can't wait to see you on our big day. For any queries or issues contact Mr. Amit Roy at +91 9435021804 or +91 7086018971."
@@ -270,7 +270,7 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var itc_kol = {lat: 22.5932759, lng: 88.27027720000001};
+    var itc_kol = {lat: 44.081114, lng: 12.14323};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: itc_kol,
@@ -284,7 +284,7 @@ function initMap() {
 }
 
 function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+    var la_fiesta = {lat: 44.081114, lng: 12.14323};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,
