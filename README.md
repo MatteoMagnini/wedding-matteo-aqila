@@ -1,2 +1,4 @@
 # wedding-matteo-aqila
-Github page of Matteo and Aqila's wedding
+GitHub page of Matteo and Aqila's wedding.
+
+Inspired by [Enrico e Michela](https://github.com/enricogallinucci/enricoemichela).
