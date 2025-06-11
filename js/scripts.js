@@ -98,7 +98,7 @@ $(document).ready(function () {
     /***************** Nav Transformicon ******************/
 
     /* When user clicks the Icon */
-    $('.nav-toggle').click(function () {
+    $('.nav-toggle').click(function (event) {
         $(this).toggleClass('active');
         $('.header-nav').toggleClass('open');
         event.preventDefault();
@@ -251,7 +251,7 @@ $(document).ready(function () {
             // && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
             // $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         // } else {
-            $.post('https://script.google.com/macros/s/AKfycbyNobHCPLIwxgyFGExTkYfkVOyq7WUWqRLvLdiWmzP8wyhSwusN/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbwdF4qdrHoyKhzysotAw3cusfQ36tbe7KA30RRuGRfP6vf2PjPv7wFGWbtuauQVDgpN/exec', data)
                 .done(function (data) {
                     console.log(data);
                     $('#alert-wrapper').html('');
