@@ -233,6 +233,30 @@ $(document).ready(function () {
 
     $('#add-to-cal').html(myCalendar);
 
+    /********************** CONFERMA PRESENZA **********************/
+    $('#confirm-form').on('submit', function (e) {
+        e.preventDefault();
+        var data = $(this).serialize();
+
+        if ($('#honeypot').val() !== "") {
+            return;
+        }
+
+        $('#confirm-alert').html(alert_markup('info', '<strong>Un attimo di pazienza!</strong> Stiamo salvando la conferma.'));
+
+        $.post('https://script.google.com/macros/s/AKfycbwCQGaR3t73uKV2J8gxD0AL38Kz-tWGk5w2ZQQDK0k0kSDWj2515HeQoemGPj4kAVAXVw/exec', data)
+            .done(function (data) {
+                console.log(data);
+                $('#confirm-alert').html('');
+                $('#confirm-modal').modal('show');
+            })
+            .fail(function (data) {
+                console.log(data);
+                $('#confirm-alert').html(alert_markup('danger', '<strong>Errore!</strong> Qualcosa è andato storto, riprova.'));
+            });
+    });
+
+
 
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
@@ -241,7 +265,7 @@ $(document).ready(function () {
 		
 		// $('#rsvp-modal').modal('show');
 		
-		if($('#honeypot').val()!=""){
+		if($('#honeypot').val()!==""){
 			return;
 		}
 
