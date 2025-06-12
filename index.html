@@ -34,41 +34,6 @@
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
-<style>
-.form-input-group select {
-  width: 100%;
-  padding-left: 35px;
-  padding-right: 10px;
-  height: 45px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: white;
-  font-size: 16px;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  line-height: 1.5;
-  vertical-align: middle;
-  position: relative;
-  z-index: 1;
-}
-
-.form-input-group i.fa-suitcase {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #999;
-  font-size: 16px;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.form-input-group select::-ms-expand {
-  display: none;
-}
-</style>
-
 <body id="top">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
@@ -230,16 +195,14 @@
 					<div class="row">
                         <div class="col-md-12">
 							<div class="form-input-group">
-								<i class="fa fa-suitcase rsvp-icon"></i>
-                                <select name="destinazione" required>
-                                    <option value="" disabled selected hidden>Aiutaci a decidere dove andare!</option>
-                                    <option>Bora Bora</option>
-                                    <option>Maldive</option>
-                                    <option>Polinesia</option>
-                                    <option>Grecia</option>
-                                    <option>Proponi tu!</option>
-                                </select>
-							</div>
+                                <label style="display: block;">Aiutaci a decidere dove andare!</label>
+
+                                <label><input type="radio" name="destinazione" value="Bora Bora" required> Bora Bora</label><br>
+                                <label><input type="radio" name="destinazione" value="Maldive"> Maldive</label><br>
+                                <label><input type="radio" name="destinazione" value="Polinesia"> Polinesia</label><br>
+                                <label><input type="radio" name="destinazione" value="Grecia"> Grecia</label><br>
+                                <label><input type="radio" name="destinazione" value="Proponi tu!"> Proponi tu!</label>
+                            </div>
 						</div>
 					</div>
                     <div class="row">
