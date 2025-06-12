@@ -187,12 +187,27 @@
 
 
 <section class="rsvp text-center section-padding" id="conferma">
+    <!-- Modal conferma partecipazione -->
+    <div id="confirm-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+            <div class="section-padding">
+              <h3>Grazie!</h3>
+              <p>Abbiamo ricevuto la conferma di partecipazione e inviato un'email con il riepilogo.<br>Non vediamo l'ora di festeggiare con voi!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="container">
         <h3>Conferma di partecipazione</h3>
         <p>Fateci sapere se sarete con noi alla cerimonia, al ricevimento o a entrambi, e se avete preferenze o intolleranze alimentari!</p>
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
-                <form id="conferma-form" class="rsvp-form" method="POST">
+                <form id="confirm-form" class="rsvp-form" method="POST">
                     <input id="honeypot-confirm" type="text" name="honeypot" value="" style="display:none;"/>
                     <div class="form-input-group">
                         <i class="fa fa-users"></i>
@@ -222,6 +237,9 @@
                     <div class="form-input-group" style="height:105px;">
                         <i class="fa fa-cutlery rsvp-icon rsvp-icon-long"></i>
                         <textarea name="preferenze_alimentari" class="" placeholder="Intolleranze o preferenze alimentari (uno per ciascuno, se possibile)"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="confirm-alert"></div>
                     </div>
                     <button class="btn-fill rsvp-btn" type="submit">Conferma la presenza</button>
                 </form>
