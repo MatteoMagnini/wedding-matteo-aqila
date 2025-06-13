@@ -256,23 +256,6 @@ $(document).ready(function () {
             });
     });
 
-    function initMap() {
-      var castello = { lat: 44.072345, lng: 12.238901 }; // <-- sostituisci qui
-
-      var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: castello,
-        scrollwheel: false
-      });
-
-      var marker = new google.maps.Marker({
-        position: castello,
-        map: map,
-        title: 'Castello Montenovo'
-      });
-}
-
-
 
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
@@ -306,22 +289,24 @@ $(document).ready(function () {
 
 });
 
+
 /********************** Extras **********************/
-
-// Google map
 function initMap() {
-    var itc_kol = {lat: 44.081114, lng: 12.14323};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: itc_kol,
-        scrollwheel: false
-    });
+      var castello = { lat: 44.0631557, lng: 12.2934148 }; // <-- sostituisci qui
 
-    var marker = new google.maps.Marker({
-        position: itc_kol,
-        map: map
-    });
-}
+      var map = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom: 15,
+        center: castello,
+        scrollwheel: false
+      });
+
+      var marker = new google.maps.Marker({
+        position: castello,
+        map: map,
+        title: 'Castello Montenovo'
+      });
+    }
+
 
 function initBBSRMap() {
     var la_fiesta = {lat: 44.081114, lng: 12.14323};
