@@ -256,6 +256,22 @@ $(document).ready(function () {
             });
     });
 
+    function initMap() {
+      var castello = { lat: 44.072345, lng: 12.238901 }; // <-- sostituisci qui
+
+      var map = new google.maps.Map(document.getElementById('map-canvas'), {
+        zoom: 15,
+        center: castello,
+        scrollwheel: false
+      });
+
+      var marker = new google.maps.Marker({
+        position: castello,
+        map: map,
+        title: 'Castello Montenovo'
+      });
+}
+
 
 
     /********************** RSVP **********************/
