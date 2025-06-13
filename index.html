@@ -97,7 +97,7 @@
                             <li><a href="#conferma">Conferma la presenza</a></li>
                             <li><a href="#lista">Lista</a></li>
                             <!--<li><a href="#ricevimento">Il ricevimento</a></li>-->
-                            <!--<li><a href="#mappa">La mappa</a></li>-->
+                            <li><a href="#mappa">La mappa</a></li>
                             <!--<li><a href="#pernottamento">Pernottamento</a></li>-->
                             <!--<li><a href="#foto">Le foto</a></li>-->
                             <!--<li><a href="#instagram">Instagram</a></li>
@@ -173,7 +173,8 @@
             <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
                 <div class="wp3">
                      <h3>Il Ricevimento</h3>
-                     <h5>Quando: <span class="time">17:00</span></h5>
+
+                     <h5>Via Castello Montenovo 74, Montiano (FC) <span class="time">Ore 17:00</span></h5>
                      <p>
                      La giornata in dettaglio:<br>
                      <strong>17:00 - 17:30</strong>: Arrivo degli invitati e inizio del ricevimento<br>
@@ -181,14 +182,44 @@
                      <strong>19:30 in poi</strong>: Cena e discorsi<br>
                      <strong>22:00</strong>: Taglio della torta e inizio della festa!<br>
                      <strong>Fino a tardi</strong>: Balli e musica!
-                      </p>
-                     <h5>Dove: Via Castello Montenovo, 74</h5>
-                     <h6>Montiano, Provincia di Forlì-Cesena, 47020, Italia</h6>
+                     </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+<!-- Sezione mappa -->
+<section id="mappa" class="section-padding">
+    <div class="text-center">
+        <h3>Come raggiungere il castello?</h3>
+        <p>
+            La soluzione più semplice se si parte da Cesena è usare l'auto (~20 minuti) e prendere la via Emilia.
+            Successivamente si prende via Montiano e si prosegue fino a Montenovo.
+        </p>
+    </div>
+
+    <div id="map-canvas" style="width: 80%; height: 400px; margin: 0 auto 300px;"></div>
+
+    <div id="map-content-wrapper" class="container pointer-events-none">
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+                <div class="text-center">
+                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
+                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Mostra informazioni
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Caricamento asincrono API Google Maps -->
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvWRzk6PL61ESTRx-XGrAOeO3_3vC1BoU&callback=initMap">
+</script>
 
 
 <section class="rsvp text-center section-padding" id="conferma">
@@ -279,7 +310,7 @@
 		<p>
             Il dono più prezioso per noi sarà condividere con voi la gioia del nostro giorno speciale.
             Se vi fa piacere farci un regalo, un vostro pensiero per la luna di miele sarà molto gradito.
-            Abbiamo già fantasticato su alcune mete da sogno, e ci piacerebbe tanto che ci aiutaste a decidere dove iniziare la nostra grande avventura!.
+            Abbiamo già fantasticato su alcune mete da sogno, e ci piacerebbe tanto che ci aiutaste a decidere dove iniziare la nostra grande avventura!
         </p>
 
         <div class="row">
@@ -339,7 +370,8 @@
             </div>
         </div>
         <div class="row">
-            <h3>Dettagli per il Bonifico</h3>
+            <!-- Inserire spazio verticale vuoto qui -->
+            <br>
             <p>Qualunque offerta decidiate di fare, vi ringraziamo di cuore per aiutarci a rendere il nostro viaggio di nozze ancora più speciale! Potete lasciare il vostro pensiero in una busta durante il ricevimento o tramite bonifico bancario all'IBAN che trovate di seguito.</p>
             <div>	Intestatari: <strong>Matteo Magnini & Aqila Farahmand</strong></div>
 
