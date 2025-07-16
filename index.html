@@ -14,7 +14,6 @@
     <meta name="description" content="We would like to invite you to our big day.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    <!--<meta property="og:title" content="Ram & Antara getting hitched">
     <meta property="og:description" content="We would like to invite you to our big day.">
     <meta property="og:image" content="https://wedding.ramswaroop.me/img/hero-min.jpg">
     <meta property="og:type" content="website">-->
@@ -96,17 +95,11 @@
                             <li><a href="#giornata">Il grande giorno</a></li>
                             <li><a href="#conferma">Conferma la presenza</a></li>
                             <li><a href="#lista">Viaggio di nozze</a></li>
-                            <!--<li><a href="#ricevimento">Il ricevimento</a></li>-->
                             <li><a href="#travel-info">Travel Info</a></li>
                             <li><a href="#mappa">La mappa di castello</a></li>
-                            <!--<li><a href="#pernottamento">Pernottamento</a></li>-->
-                            <!--<li><a href="#foto">Le foto</a></li>-->
-                            <!--<li><a href="#instagram">Instagram</a></li>
-                            <li><a href="#eng-pics">Engagement</a></li>
                             <li class="hidden-sm hidden-xs"><a href="#video-bg">Glimpse of the city</a></li>-->
                         </ul>
                         <ul class="member-actions">
-                            <!--<li><a href="#map" class="login">Location</a></li>-->
                             <li><a href="#lista" class="btn-white btn-small">Viaggio di nozze</a></li>
                         </ul>
                     </nav>
@@ -121,7 +114,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="hero-content text-center">
-                    <img src="icon/logo-lg.png">
+                    <img src="icon/logo-lg.png" alt="Logo" class="logo-lg">
                 </div>
             </div>
         </div>
@@ -138,9 +131,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3><img src="icon/fireworks.jpg" class="fireworks"> Presto sposi! <img src="icon/fireworks.jpg" class="fireworks"></h3>
+                <h3><img src="icon/fireworks.jpg" class="fireworks" alt="fireworks"> Presto sposi! <img src="icon/fireworks.jpg" class="fireworks" alt="fireworks"></h3>
                 <p>La data sarà <strong>venerdì 19 Settembre 2025</strong>
-                <!--<div class="share-bar"></div>-->
             </div>
         </div>
     </div>
@@ -230,19 +222,15 @@
 
 <section class="rsvp text-center section-padding" id="conferma">
     <!-- Modal conferma partecipazione -->
-    <div id="confirm-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
-            <div class="section-padding">
-              <h3>Grazie!</h3>
-              <p>Abbiamo ricevuto la conferma di partecipazione e inviato un'email con il riepilogo.<br>Non vediamo l'ora di festeggiare con voi!</p>
-            </div>
-          </div>
+    <dialog id="confirm-modal">
+      <form method="dialog" style="margin:0;">
+        <button type="button" class="close" onclick="document.getElementById('confirm-modal').close();" aria-label="Close"><span>&times;</span></button>
+        <div class="section-padding">
+          <h3>Grazie!</h3>
+          <p>Abbiamo ricevuto la conferma di partecipazione e inviato un'email con il riepilogo.<br>Non vediamo l'ora di festeggiare con voi!</p>
         </div>
-      </div>
-    </div>
+      </form>
+    </dialog>
 
     <div class="container">
         <h3>Conferma di partecipazione</h3>
@@ -294,21 +282,15 @@
 
 <section class="rsvp text-center section-padding" id="lista">
 
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3>Grazie!</h3>
-                        <p>Abbiamo inviato un'email all'indirizzo indicato con le istruzioni per il bonifico. Grazie infinite per il vostro contributo, vi aspettiamo il giorno delle nozze!</p>
-                        <!--<div id="add-to-cal"></div>-->
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    <dialog id="rsvp-modal">
+        <form method="dialog" style="margin:0;">
+            <button type="button" class="close" onclick="document.getElementById('rsvp-modal').close();" aria-label="Close"><span>&times;</span></button>
+            <div class="section-padding">
+                <h3>Grazie!</h3>
+                <p>Abbiamo inviato un'email all'indirizzo indicato con le istruzioni per il bonifico. Grazie infinite per il vostro contributo, vi aspettiamo il giorno delle nozze!</p>
+            </div>
+        </form>
+    </dialog>
 
     <div class="container">
 		<h3>Lista viaggio</h3>
@@ -490,8 +472,6 @@
 <script src="js/vendor/ouical.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFfrkEze7jmPHNjjFg9j5Wg-N5pcaaYCs"></script>
 <script src="js/scripts.js"></script>
-<!--<script src="js/foto.js"></script>-->
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133285537-1"></script>
 <script>
