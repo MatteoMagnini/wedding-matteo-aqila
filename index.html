@@ -217,6 +217,68 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvWRzk6PL61ESTRx-XGrAOeO3_3vC1BoU&callback=initMap">
 </script>
 
+
+<section class="rsvp text-center section-padding" id="conferma">
+    <!-- Modal conferma partecipazione -->
+    <dialog id="confirm-modal">
+      <form method="dialog" style="margin:0;">
+        <button type="button" class="close" onclick="document.getElementById('confirm-modal').close();" aria-label="Close"><span>&times;</span></button>
+        <div class="section-padding">
+          <h3>Grazie!</h3>
+          <p>Abbiamo ricevuto la conferma di partecipazione e inviato un'email con il riepilogo.<br>Non vediamo l'ora di festeggiare con voi!</p>
+        </div>
+      </form>
+    </dialog>
+
+    <div class="container">
+        <h3>Conferma di partecipazione</h3>
+        <p>Fateci sapere se sarete con noi alla cerimonia, al ricevimento o a entrambi, e se avete preferenze o intolleranze alimentari.
+            Saremmo grati se voleste confermare la vostra partecipazione entro il 31 Luglio 2025.</p>
+        <div id="countdown" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form id="confirm-form" class="rsvp-form" method="POST">
+                    <input id="honeypot-confirm" type="text" name="honeypot" value="" style="display:none;"/>
+                    <div class="form-input-group">
+                        <i class="fa fa-users"></i>
+                        <input name="nome_partecipanti" class="" placeholder="I vostri nomi" required>
+                    </div>
+                    <div class="form-input-group">
+                        <i class="fa fa-envelope"></i>
+                        <input type="email" name="email_partecipanti" class="" placeholder="Email" required>
+                    </div>
+                    <div class="form-input-group">
+                        <i class="fa fa-calendar"></i>
+                        <select name="presenza" required>
+                            <option value="" disabled selected hidden>Conferma la tua presenza</option>
+                            <option value="sì">Sì, ci sarò</option>
+                            <option value="Non posso partecipare">Non posso partecipare</option>
+                        </select>
+                    </div>
+                    <div class="form-input-group">
+                        <i class="fa fa-users"></i>
+                        <input type="number" name="numero_partecipanti" class="" min="1" placeholder="Numero totale di partecipanti (bambini esclusi)" required>
+                    </div>
+                    <div class="form-input-group">
+                        <i class="fa fa-child"></i>
+                        <input type="number" name="bambini" class="" min="0" placeholder="Numero di bambini">
+                    </div>
+                    <div class="form-input-group" style="height:105px;">
+                        <i class="fa fa-cutlery rsvp-icon rsvp-icon-long"></i>
+                        <textarea name="preferenze_alimentari" class="" placeholder="Intolleranze o preferenze alimentari (uno per ciascuno, se possibile)"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="confirm-alert"></div>
+                    </div>
+                    <button class="btn-fill rsvp-btn" type="submit">Invia</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section class="rsvp text-center section-padding" id="lista">
 
     <dialog id="rsvp-modal">
@@ -417,6 +479,33 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-133285537-1');
+</script>
+<script>
+  // Data limite: 31 Luglio 2025 alle 23:59:59
+  const deadline = new Date("2025-07-31T23:59:59").getTime();
+
+  const countdownElement = document.getElementById("countdown");
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = deadline - now;
+
+    if (distance < 0) {
+      countdownElement.innerHTML = "Il termine per confermare la partecipazione è scaduto.";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdownElement.innerHTML =
+      `Tempo rimanente per confermare: ${days} giorni, ${hours} ore, ${minutes} minuti, ${seconds} secondi`;
+  };
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 </script>
 
 
