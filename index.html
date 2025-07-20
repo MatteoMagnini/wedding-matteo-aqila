@@ -220,15 +220,19 @@
 
 <section class="rsvp text-center section-padding" id="conferma">
     <!-- Modal conferma partecipazione -->
-    <dialog id="confirm-modal">
-      <form method="dialog" style="margin:0;">
-        <button type="button" class="close" onclick="document.getElementById('confirm-modal').close();" aria-label="Close"><span>&times;</span></button>
-        <div class="section-padding">
-          <h3>Grazie!</h3>
-          <p>Abbiamo ricevuto la conferma di partecipazione e inviato un'email con il riepilogo.<br>Non vediamo l'ora di festeggiare con voi!</p>
+    <div id="confirm-modal" class="modal fade" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+            <div class="section-padding">
+              <h3>Grazie!</h3>
+              <p>Abbiamo ricevuto la conferma di partecipazione e inviato un'email con il riepilogo.<br>Non vediamo l'ora di festeggiare con voi!</p>
+            </div>
+          </div>
         </div>
-      </form>
-    </dialog>
+      </div>
+    </div>
 
     <div class="container">
         <h3>Conferma di partecipazione</h3>
@@ -252,8 +256,8 @@
                         <i class="fa fa-calendar"></i>
                         <select name="presenza" required>
                             <option value="" disabled selected hidden>Conferma la tua presenza</option>
-                            <option value="sì">Sì, ci sarò</option>
-                            <option value="Non posso partecipare">Non posso partecipare</option>
+                            <option value="si">Sì, ci sarò</option>
+                            <option value="no">Non posso partecipare</option>
                         </select>
                     </div>
                     <div class="form-input-group">
@@ -281,15 +285,21 @@
 
 <section class="rsvp text-center section-padding" id="lista">
 
-    <dialog id="rsvp-modal">
-        <form method="dialog" style="margin:0;">
-            <button type="button" class="close" onclick="document.getElementById('rsvp-modal').close();" aria-label="Close"><span>&times;</span></button>
-            <div class="section-padding">
-                <h3>Grazie!</h3>
-                <p>Abbiamo inviato un'email all'indirizzo indicato con le istruzioni per il bonifico. Grazie infinite per il vostro contributo, vi aspettiamo il giorno delle nozze!</p>
-            </div>
-        </form>
-    </dialog>
+    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3>Grazie!</h3>
+                        <p>Abbiamo inviato un'email all'indirizzo indicato con le istruzioni per il bonifico. Grazie infinite per il vostro contributo, vi aspettiamo il giorno delle nozze!</p>
+                        <!--<div id="add-to-cal"></div>-->
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <div class="container">
 		<h3>Lista viaggio</h3>
