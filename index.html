@@ -76,6 +76,33 @@
 .form-input-group select::-ms-expand {
   display: none;
 }
+
+/* Disabled form styling - only for RSVP form */
+#confirm-form input:disabled,
+#confirm-form select:disabled,
+#confirm-form textarea:disabled {
+  background-color: #f5f5f5 !important;
+  color: #999 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+#confirm-form button:disabled {
+  background-color: #ccc !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+/* Expiration message styling */
+.expiration-message {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 </style>
 
 
@@ -239,6 +266,14 @@
         <p>Fateci sapere se sarete con noi alla cerimonia, al ricevimento o a entrambi, e se avete preferenze o intolleranze alimentari.
             Saremmo grati se voleste confermare la vostra partecipazione entro il 31 Luglio 2025.</p>
         <div id="countdown" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></div>
+        
+        <!-- Expiration message -->
+        <div id="expiration-message" class="expiration-message" style="display: none;">
+            <div class="alert alert-warning" style="background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-size: 1.1em; font-weight: bold;">
+                <i class="fa fa-exclamation-triangle" style="margin-right: 10px;"></i>
+                Il termine per confermare la partecipazione è scaduto. Non è più possibile inviare il modulo di conferma.
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -246,15 +281,15 @@
                     <input id="honeypot-confirm" type="text" name="honeypot" value="" style="display:none;"/>
                     <div class="form-input-group">
                         <i class="fa fa-users"></i>
-                        <input name="nome_partecipanti" class="" placeholder="I vostri nomi" required>
+                        <input name="nome_partecipanti" class="" placeholder="I vostri nomi" required disabled>
                     </div>
                     <div class="form-input-group">
                         <i class="fa fa-envelope"></i>
-                        <input type="email" name="email_partecipanti" class="" placeholder="Email" required>
+                        <input type="email" name="email_partecipanti" class="" placeholder="Email" required disabled>
                     </div>
                     <div class="form-input-group">
                         <i class="fa fa-calendar"></i>
-                        <select name="presenza" required>
+                        <select name="presenza" required disabled>
                             <option value="" disabled selected hidden>Conferma la tua presenza</option>
                             <option value="si">Sì, ci sarò</option>
                             <option value="no">Non posso partecipare</option>
@@ -262,20 +297,20 @@
                     </div>
                     <div class="form-input-group">
                         <i class="fa fa-users"></i>
-                        <input type="number" name="numero_partecipanti" class="" min="1" placeholder="Numero totale di partecipanti (bambini esclusi)" required>
+                        <input type="number" name="numero_partecipanti" class="" min="1" placeholder="Numero totale di partecipanti (bambini esclusi)" required disabled>
                     </div>
                     <div class="form-input-group">
                         <i class="fa fa-child"></i>
-                        <input type="number" name="bambini" class="" min="0" placeholder="Numero di bambini">
+                        <input type="number" name="bambini" class="" min="0" placeholder="Numero di bambini" disabled>
                     </div>
                     <div class="form-input-group" style="height:105px;">
                         <i class="fa fa-cutlery rsvp-icon rsvp-icon-long"></i>
-                        <textarea name="preferenze_alimentari" class="" placeholder="Intolleranze o preferenze alimentari (uno per ciascuno, se possibile)"></textarea>
+                        <textarea name="preferenze_alimentari" class="" placeholder="Intolleranze o preferenze alimentari (uno per ciascuno, se possibile)" disabled></textarea>
                     </div>
                     <div class="row">
                         <div class="col-md-12" id="confirm-alert"></div>
                     </div>
-                    <button class="btn-fill rsvp-btn" type="submit">Invia</button>
+                    <button class="btn-fill rsvp-btn" type="submit" disabled>Invia</button>
                 </form>
             </div>
         </div>
@@ -502,6 +537,9 @@
 
     if (distance < 0) {
       countdownElement.innerHTML = "Il termine per confermare la partecipazione è scaduto.";
+      // Show expiration message and hide form
+      document.getElementById('expiration-message').style.display = 'block';
+      document.getElementById('confirm-form').style.display = 'none';
       return;
     }
 
