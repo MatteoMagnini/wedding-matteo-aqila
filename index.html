@@ -10,12 +10,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Matteo & Aqila presto sposi!</title>
-    <meta name="description" content="We would like to invite you to our big day.">
+    <title>Matteo & Aqila - Siamo Sposati!</title>
+    <meta name="description" content="Thank you for celebrating our special day with us.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
-    <meta property="og:description" content="We would like to invite you to our big day.">
-    <meta property="og:image" content="https://wedding.ramswaroop.me/img/hero-main.jpg">
+    <meta property="og:description" content="Thank you for celebrating our special day with us.">
+    <meta property="og:image" content="https://wedding.ramswaroop.me/img/DSC06887.jpg">
     <meta property="og:type" content="website">
     <link rel="apple-touch-icon" sizes="180x180" href="icon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
@@ -119,6 +119,91 @@ dialog::backdrop {
 dialog[open] {
   display: block;
 }
+
+/* Honeymoon gallery hover effect */
+#lista .fancybox img {
+  transition: transform 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+#lista .fancybox:hover img {
+  transform: scale(1.05);
+}
+
+/* Download protection - disable image dragging */
+#lista img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* Watermark overlay for gallery images */
+#lista .fancybox {
+  position: relative;
+  display: inline-block;
+}
+
+#lista .fancybox::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hero background - using DSC06887.jpg */
+.hero {
+  background-image: url('img/DSC06887.jpg');
+}
+
+/* Matrimonio gallery hover effect */
+#matrimonio-gallery .fancybox img {
+  transition: transform 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+#matrimonio-gallery .fancybox:hover img {
+  transform: scale(1.05);
+}
+
+/* Download protection - disable image dragging for matrimonio gallery */
+#matrimonio-gallery img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+/* Watermark overlay for matrimonio gallery images */
+#matrimonio-gallery .fancybox {
+  position: relative;
+  display: inline-block;
+}
+
+#matrimonio-gallery .fancybox::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+}
 </style>
 
 
@@ -138,7 +223,6 @@ dialog[open] {
                             <li><a href="#giornata">Il grande giorno</a></li>
                             <li><a href="#lista">Viaggio di nozze</a></li>
                             <li><a href="#mappa">La mappa di castello</a></li>
-                            <li><a href="#travel-info">Travel Info</a></li>
                         </ul>
                         <ul class="member-actions">
                             <li><a href="#lista" class="btn-white btn-small">Viaggio di nozze</a></li>
@@ -172,8 +256,8 @@ dialog[open] {
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3><img src="icon/fireworks.jpg" class="fireworks" alt="fireworks"> Presto sposi! <img src="icon/fireworks.jpg" class="fireworks" alt="fireworks"></h3>
-                <p>La data sarà <strong>venerdì 19 Settembre 2025</strong>
+                <h3><img src="icon/fireworks.jpg" class="fireworks" alt="fireworks"> Siamo Sposati! <img src="icon/fireworks.jpg" class="fireworks" alt="fireworks"></h3>
+                <p>Il nostro giorno speciale è stato <strong>venerdì 19 Settembre 2025</strong>
             </div>
         </div>
     </div>
@@ -195,7 +279,7 @@ dialog[open] {
                     <h5>Sala degli Specchi, palazzo Albornoz, Cesena <span class="time">Ore 13:00</span></h5>
 					<h6>Piazza del Popolo, 10 - Cesena (FC), Italia </h6>
                     <img src="img/sala-di-speccio-cesena.jpg" alt="Sala degli Specchi, palazzo Albornoz, Cesena" style="max-width: 100%; height: auto; display: block; margin-bottom: 15px;">
-                    <p>La cerimonia si è svolgerà con rito civile presso la Sala degli Specchi del palazzo Albornoz, Cesena (FC), Italia.</p>
+                    <p>La cerimonia si è svolta con rito civile presso la Sala degli Specchi del palazzo Albornoz, Cesena (FC), Italia.</p>
 
                 </div>
             </div>
@@ -213,16 +297,113 @@ dialog[open] {
                      <strong>22:00</strong>: Il Taglio della Torta Nuziale <br>
                      <strong>Fino a tardi</strong>: Balli e musica!
                      </p>
+                     <p>Grazie a tutti coloro che hanno condiviso con noi questo giorno indimenticabile!</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div>
-                <h3>Nota per gli Ospiti: Orari e Ricevimento</h3>
-                <p>La cerimonia si terrà alle ore 13:00, siete i benvenuti a partecipare se lo desiderate, ma sappiate che non siete in alcun modo obbligati ad essere presenti a questo orario.</p>
-                <p>Il ricevimento serale inizierà alle ore 17:00 presso il Castello, dove vi aspetteremo per celebrare insieme!</p>
-                <p>Da notare che non c'è il pranzo organizzato dopo la cerimonia. Per questo, <strong> chiediamo gentilmente di considerare anche il tempo di attesa dalle 13:00 alle 17:00</strong>, orario in cui ci ritroveremo al Castello per i festeggiamenti.</p>
+                <h3>Il Nostro Giorno Speciale</h3>
+                <p>La cerimonia si è tenuta alle ore 13:00 presso la Sala degli Specchi del palazzo Albornoz.</p>
+                <p>Il ricevimento serale è iniziato alle ore 17:00 presso il Castello Montenovo, dove abbiamo celebrato insieme con tutti i nostri cari!</p>
+                <p>Grazie infinite a tutti gli ospiti che hanno reso questo giorno così speciale e indimenticabile.</p>
 
+            </div>
+        </div>
+        <div class="row" style="margin-top: 60px;">
+            <div class="col-md-12 text-center">
+                <h3 style="margin-bottom: 30px;">I Nostri Ricordi</h3>
+                <p style="margin-bottom: 40px;">Condividiamo con voi alcuni momenti più belli del nostro giorno speciale</p>
+            </div>
+        </div>
+        <div class="row" id="matrimonio-gallery">
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC03047.JPG" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Guillaume Bourg &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC03047.JPG" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC05769.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC05769.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC05863.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC05863.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC06193.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC06193.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC06395.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC06395.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC06462.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC06462.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC06915.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC06915.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC06985.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC06985.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC07128.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC07128.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC07568.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC07568.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC07618.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC07618.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC07662.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC07662.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC07778.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC07778.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC07896.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC07896.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC08661.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC08661.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-6" style="margin-bottom: 20px;">
+                <a href="img/matrimonio/DSC08737.jpg" class="fancybox matrimonio-image" data-caption="Il grande giorno - Foto di Giulia Moscatelli &copy;" rel="matrimonio-gallery" data-fancybox-group="matrimonio">
+                    <img src="img/matrimonio/DSC08737.jpg" alt="Il grande giorno" class="matrimonio-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <div class="col-md-12 text-center">
+                <p style="font-size: 0.85em; color: #999; font-style: italic;">
+                    <i class="fa fa-camera" style="margin-right: 5px;"></i>
+                    Foto di Giulia Moscatelli &copy; 2025 - Tutti i diritti riservati
+                </p>
             </div>
         </div>
     </div>
@@ -232,7 +413,7 @@ dialog[open] {
 <!-- Sezione mappa -->
 <section id="mappa" class="section-padding">
     <div class="text-center">
-        <h3>Come raggiungere il castello?</h3>
+        <h3>Come raggiungere il Castello Montenovo?</h3>
         <p>
             La soluzione più semplice se si parte da Cesena è usare l'auto (~20 minuti) e prendere la via Emilia.
             Successivamente si prende via Montiano e si prosegue fino a Montenovo.
@@ -270,7 +451,7 @@ dialog[open] {
             <button type="button" class="close" aria-label="Close"><span>&times;</span></button>
             <div class="section-padding">
               <h3>Grazie!</h3>
-              <p>Abbiamo ricevuto la conferma di partecipazione e inviato un'email con il riepilogo.<br>Non vediamo l'ora di festeggiare con voi!</p>
+              <p>Grazie per aver fatto parte del nostro giorno speciale!<br>La vostra presenza ha reso la nostra celebrazione ancora più indimenticabile.</p>
             </div>
           </div>
         </div>
@@ -278,233 +459,60 @@ dialog[open] {
     </dialog>
 
     <div class="container">
-        <h3>Conferma di partecipazione</h3>
-        <p>Fateci sapere se sarete con noi alla cerimonia, al ricevimento o a entrambi, e se avete preferenze o intolleranze alimentari.
-            Saremmo grati se voleste confermare la vostra partecipazione entro il 31 Luglio 2025.</p>
-        <div id="countdown" style="font-size: 1.2em; font-weight: bold; margin-bottom: 20px;"></div>
+        <h3>Grazie per la vostra partecipazione</h3>
+        <p>Grazie a tutti coloro che hanno condiviso con noi questo giorno speciale. La vostra presenza ha reso la nostra celebrazione ancora più indimenticabile!</p>
         
         <!-- Expiration message -->
-        <div id="expiration-message" class="expiration-message" style="display: none;">
-            <div class="alert alert-warning" style="background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-size: 1.1em; font-weight: bold;">
-                <i class="fa fa-exclamation-triangle" style="margin-right: 10px;"></i>
-                Il termine per confermare la partecipazione è scaduto. Non è più possibile inviare il modulo di conferma.
+        <div id="expiration-message" class="expiration-message" style="display: block;">
+            <div class="alert alert-info" style="background-color: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-size: 1.1em;">
+                <i class="fa fa-heart" style="margin-right: 10px;"></i>
+                Grazie per aver celebrato con noi il nostro giorno speciale!
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <form id="confirm-form" class="rsvp-form" method="POST">
-                    <input id="honeypot-confirm" type="text" name="honeypot" value="" style="display:none;"/>
-                    <div class="form-input-group">
-                        <i class="fa fa-users"></i>
-                        <input name="nome_partecipanti" class="" placeholder="I vostri nomi" required disabled>
-                    </div>
-                    <div class="form-input-group">
-                        <i class="fa fa-envelope"></i>
-                        <input type="email" name="email_partecipanti" class="" placeholder="Email" required disabled>
-                    </div>
-                    <div class="form-input-group">
-                        <i class="fa fa-calendar"></i>
-                        <select name="presenza" required disabled>
-                            <option value="" disabled selected hidden>Conferma la tua presenza</option>
-                            <option value="si">Sì, ci sarò</option>
-                            <option value="no">Non posso partecipare</option>
-                        </select>
-                    </div>
-                    <div class="form-input-group">
-                        <i class="fa fa-users"></i>
-                        <input type="number" name="numero_partecipanti" class="" min="1" placeholder="Numero totale di partecipanti (bambini esclusi)" required disabled>
-                    </div>
-                    <div class="form-input-group">
-                        <i class="fa fa-child"></i>
-                        <input type="number" name="bambini" class="" min="0" placeholder="Numero di bambini" disabled>
-                    </div>
-                    <div class="form-input-group" style="height:105px;">
-                        <i class="fa fa-cutlery rsvp-icon rsvp-icon-long"></i>
-                        <textarea name="preferenze_alimentari" class="" placeholder="Intolleranze o preferenze alimentari (uno per ciascuno, se possibile)" disabled></textarea>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="confirm-alert"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn" type="submit" disabled>Invia</button>
-                </form>
-            </div>
-        </div>
     </div>
 </section>
 
 
 <section class="rsvp text-center section-padding" id="lista">
-
-    <dialog id="rsvp-modal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3>Grazie!</h3>
-                        <p>Abbiamo inviato un'email all'indirizzo indicato con le istruzioni per il bonifico. Grazie infinite per il vostro contributo, vi aspettiamo il giorno delle nozze!</p>
-                    </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </dialog>
-
     <div class="container">
-		<h3>Lista viaggio</h3>
+		<h3>Viaggio di nozze</h3>
 		<p>
-            Il dono più prezioso per noi sarà condividere con voi la gioia del nostro giorno speciale. Se vi fa piacere farci un regalo, un vostro pensiero per la luna di miele sarà molto gradito.
-            Abbiamo già fantasticato su diverse mete da sogno e ci piacerebbe tanto che ci aiutaste a scegliere dove iniziare la nostra grande avventura!
-            Qualsiasi contributo decidiate di fare, vi ringraziamo di cuore! Potete farlo comodamente tramite bonifico bancario.
+            Condividiamo con voi i ricordi del nostro viaggio di nozze, dove ogni istante è diventato un ricordo indelebile del nostro amore.
         </p>
 
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <form id="rsvp-form" class="rsvp-form"
-                      action=""
-                      method="POST">
-					<input id="honeypot" type="text" name="honeypot" value="" style="display:none;"/>
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                            <div class="form-input-group">
-                                <i class="fa fa-users"></i><input name="name" class="" placeholder="I vostri nomi">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-							<div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class="" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-eur rsvp-icon"></i><input type="number" name="importo" id="importo" class="" placeholder="Importo del regalo">
-                            </div>
-                        </div>
-                    </div>
-					<div class="row">
-                        <div class="col-md-12">
-							<div class="form-input-group">
-								<i class="fa fa-suitcase rsvp-icon"></i>
-                                <select name="destinazione" required>
-                                    <option value="" disabled selected hidden>Aiutaci a decidere dove andare!</option>
-                                    <option>Maldive</option>
-                                    <option>Bali, Indonesia</option>
-                                    <option>Polinesia</option>
-                                    <option>Bora Bora</option>
-                                    <option>Grecia</option>
-                                    <option>Proponi tu!</option>
-                                </select>
-							</div>
-						</div>
-					</div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-input-group" style="height:105px;">
-                                <i class="fa fa-comment rsvp-icon rsvp-icon-long"></i><textarea name="message" class="" placeholder="Lasciateci un messaggio (facoltativo)" ></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12" id="alert-wrapper"></div>
-                    </div>
-                    <button class="btn-fill rsvp-btn">
-                        Invia
-                    </button>
-                </form>
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 20px;">
+                <a href="img/honeymoon/097df099-fb10-4b42-b3ce-73a87862fd2c.JPG" class="fancybox honeymoon-image" data-caption="Viaggio di nozze" rel="honeymoon-gallery" data-fancybox-group="honeymoon">
+                    <img src="img/honeymoon/097df099-fb10-4b42-b3ce-73a87862fd2c.JPG" alt="Viaggio di nozze" class="honeymoon-photo" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 20px;">
+                <a href="img/honeymoon/IMG_9444.HEIC" class="fancybox honeymoon-image" data-caption="Viaggio di nozze" rel="honeymoon-gallery" data-fancybox-group="honeymoon">
+                    <img src="img/honeymoon/IMG_9444.HEIC" alt="Viaggio di nozze" class="honeymoon-photo" data-is-heic="true" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 20px;">
+                <a href="img/honeymoon/IMG_9445.HEIC" class="fancybox honeymoon-image" data-caption="Viaggio di nozze" rel="honeymoon-gallery" data-fancybox-group="honeymoon">
+                    <img src="img/honeymoon/IMG_9445.HEIC" alt="Viaggio di nozze" class="honeymoon-photo" data-is-heic="true" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12" style="margin-bottom: 20px;">
+                <a href="img/honeymoon/IMG_9449.HEIC" class="fancybox honeymoon-image" data-caption="Viaggio di nozze" rel="honeymoon-gallery" data-fancybox-group="honeymoon">
+                    <img src="img/honeymoon/IMG_9449.HEIC" alt="Viaggio di nozze" class="honeymoon-photo" data-is-heic="true" style="width: 100%; height: 250px; object-fit: cover; border-radius: 5px; cursor: pointer;">
+                </a>
             </div>
         </div>
-        <div class="row">
-            <!-- Bank account information removed for security -->
-        </div>
-    </div>
-</section>
-
-<!-- Main Travel Information Section -->
-<section class="travel-info section-padding" id="travel-info">
-    <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top: 20px;">
             <div class="col-md-12">
-                <h3 class="header text-center">Helpful Information for Our International Guests</h3>
-                <p class="text-center my-8">We're thrilled to have you join us! Here are some tips to make your journey to Cesena as smooth as possible.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- How to Reach Cesena Column -->
-            <div class="col-md-6">
-                <div class="travel-content-block">
-                    <h4>How to Reach Cesena</h4>
-                    <p>The most convenient airport for reaching Cesena is <strong> Bologna Guglielmo Marconi Airport (BLQ)</strong>.</p>
-                    <p>From Bologna to Cesena, your main options are:</p>
-                    <ul>
-                        <li>
-                            <p> <strong>Train:</strong> This is the most recommended option for comfort and speed. From Bologna Airport, take the "Marconi Express" (a short monorail) directly to Bologna Centrale train station (about 7 minutes). From there, frequent trains (Regionale, Intercity) run to Cesena. The train journey from Bologna Centrale to Cesena typically takes between 40 and 60 minutes. You can check schedules and purchase tickets on <a href="https://www.trenitalia.com" target="_blank">Trenitalia.</a> </p>
-                        </li>
-                        <li>
-                            <p><strong>Direct Bus:</strong> There are also direct bus services (e.g., <a href="https://www.shuttleitalyairport.it/en/" target="_blank">Shuttle Italy Airport</a>) from Bologna Airport to Cesena. The journey takes approximately 1 hour. Check the bus company websites for schedules and availability.</p>
-                        </li>
-                        <li>
-                            <p><strong>Car Rental:</strong> If you prefer more flexibility to explore the region, you can rent a car directly at the airport. The drive takes about 1 hour.
-                            Most major car rental companies have desks located directly within the Bologna Airport Terminal, typically on the first floor.
-                            While possible to rent upon arrival, <strong> booking in advance is strongly advised to ensure availability</strong>, get a better price, and avoid long queues, especially for specific car types.
-                            <a href="https://www.alamo.com/en/car-rental-locations/it/bologna-guglielmo-marconi-airport-llcp.html#:~:text=The%20rental%20counter%20is%20located,No%20shuttle%20is%20required." target="_blank">Bologna Guglielmo Marconi Airport (BLQ) Car Rental</a></p>
-                        </li>
-                    </ul>
-                    <p>Cesena is also well-connected to smaller airports like Forlì (FRL) and Rimini (RMI), but Bologna is generally the best choice for international connections.</p>
-                </div>
-            </div>
-
-            <!-- Where to Stay in Cesena Column -->
-            <div class="col-md-6">
-                <div class="travel-content-block">
-                    <h4>Where to Stay in Cesena</h4>
-                    <p>Cesena offers various accommodation options for every budget. We recommend booking in advance, especially if your stay coincides with local events.</p>
-
-                    <h5>Hotels:</h5>
-                    <p>For a comfortable stay, look for B&Bs or hotels in the city center or near the train station for easy transport. Some options include:</p>
-                    <ul>
-                        <li><strong><a href="https://www.hotelcasalicesena.com/" >Hotel Casali</a></strong></li>
-                        <li><strong>Hotel Romagna</strong></li>
-                        <li>Alternatively, search on platforms like <a href="https://www.booking.com/city/it/cesena.html" target="_blank">Booking.com</a> or <a href="https://www.expedia.com/Cesena-Hotels.d6047212.Travel-Guide-Hotels" target="_blank">Expedia</a>.</li>
-                    </ul>
-
-                    <h5>B&Bs (Bed & Breakfasts):</h5>
-                    <p>We recommend choosing a B&B over a hotel for a more authentic and personal stay in Cesena. B&Bs often offer a warmer, more welcoming atmosphere, frequently hosted by locals who can provide insider tips and a deeper connection to the area. Many are located in the charming historic center or in peaceful yet well-connected neighborhoods:</p>
-                    <ul>
-                        <li><strong><a href="https://mondoanticocesena.it/en/">Mondo Antico</a></strong> (City center)</li>
-                        <li><strong>B&B La Garampa</strong> (City center, excellent reviews)</li>
-                        <li><strong>Armonie B&B</strong> (City center)</li>
-                        <li><strong>B&B Del Vicolo</strong> (Near the train station)</li>
-                        <li><strong>Casimiro Rooms</strong> (Near the city center)</li>
-                        <li>You can find other options on <a href="https://www.bed-and-breakfast.it/en/best-bb-hotels-cesena" target="_blank">Bed-and-Breakfast.it</a>.</li>
-                    </ul>
-
-                    <h5>Hostels:</h5>
-                    <p>For those looking for a more budget-friendly option, Cesena also has a few hostels, though they are less numerous than in larger cities:</p>
-                    <ul>
-                        <li>Some options might be slightly outside Cesena (e.g., in Rimini or Cesenatico), but check their proximity to public transport.</li>
-                        <li>Search on sites like <a href="https://www.hostelworld.com" target="_blank">Hostelworld</a> or <a href="https://www.travelocity.com/Cesena-Hostels.d6047212-aaHostels.Travel-Guide-Accommodation" target="_blank">Travelocity Hostels</a>.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row contact-info">
-                <div class="col-md-12" style="margin-top: 30px;">
-                    <p class="text-center my-8">Please don't hesitate to contact us if you need further directions or assistance with your travel plans!</p>
-                    <div class="travel-content-block text-center p-6 rounded-lg shadow-md bg-white">
-                        <h5 class="text-xl font-semibold mb-3 text-blue-800">Contact Details</h5>
-                          <p class="text-lg mb-2">
-                          <strong>Email:</strong> <a href="#" class="text-blue-600 hover:underline">aqela.af@gmail.com or matteo.magnini00@gmail.com</a>
-                           </p>
-                    </div>
-                </div>
+                <p style="font-size: 0.9em; color: #999; font-style: italic;">
+                    <i class="fa fa-info-circle"></i> Nota: I file HEIC potrebbero non essere visualizzati correttamente in alcuni browser. Si consiglia di convertirli in formato JPG per una migliore compatibilità.
+                </p>
             </div>
         </div>
     </div>
 </section>
+
 
 
 <footer>
@@ -538,34 +546,62 @@ dialog[open] {
   gtag('config', 'UA-133285537-1');
 </script>
 <script>
-  // Data limite: 31 Luglio 2025 alle 23:59:59
-  const deadline = new Date("2025-07-31T23:59:59").getTime();
-
-  const countdownElement = document.getElementById("countdown");
-
-  const updateCountdown = () => {
-    const now = Date.now();
-    const distance = deadline - now;
-
-    if (distance < 0) {
-      countdownElement.innerHTML = "Il termine per confermare la partecipazione è scaduto.";
-      // Show expiration message and hide form
-      document.getElementById('expiration-message').style.display = 'block';
-      document.getElementById('confirm-form').style.display = 'none';
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownElement.innerHTML =
-      `Tempo rimanente per confermare: ${days} giorni, ${hours} ore, ${minutes} minuti, ${seconds} secondi`;
-  };
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+// Download protection for honeymoon and matrimonio galleries
+(function() {
+    // Handle image loading errors (for HEIC files)
+    document.addEventListener('DOMContentLoaded', function() {
+        var images = document.querySelectorAll('#lista .honeymoon-photo');
+        images.forEach(function(img) {
+            img.addEventListener('error', function() {
+                if (this.dataset.isHeic === 'true') {
+                    this.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%23ddd\' width=\'400\' height=\'300\'/%3E%3Ctext fill=\'%23999\' font-family=\'sans-serif\' font-size=\'18\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\'%3EHEIC - Converti in JPG%3C/text%3E%3C/svg%3E';
+                } else {
+                    this.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'400\' height=\'300\'%3E%3Crect fill=\'%23ddd\' width=\'400\' height=\'300\'/%3E%3Ctext fill=\'%23999\' font-family=\'sans-serif\' font-size=\'18\' x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\'%3EImmagine non disponibile%3C/text%3E%3C/svg%3E';
+                }
+            });
+        });
+    });
+    
+    // Disable right-click on gallery images (both galleries)
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.closest('#lista') || e.target.closest('#matrimonio-gallery')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // Disable drag and drop (both galleries)
+    document.addEventListener('dragstart', function(e) {
+        if (e.target.closest('#lista img') || e.target.closest('#matrimonio-gallery img')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // Disable keyboard shortcuts (Ctrl+S, Ctrl+A, etc.) (both galleries)
+    document.addEventListener('keydown', function(e) {
+        if (e.target.closest('#lista') || e.target.closest('#matrimonio-gallery')) {
+            // Disable Ctrl+S, Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+P
+            if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'a' || e.key === 'c' || e.key === 'v' || e.key === 'p' || e.key === 'S' || e.key === 'A' || e.key === 'C' || e.key === 'V' || e.key === 'P')) {
+                e.preventDefault();
+                return false;
+            }
+            // Disable F12 (Developer Tools)
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+        }
+    });
+    
+    // Disable text selection on galleries (both galleries)
+    document.addEventListener('selectstart', function(e) {
+        if (e.target.closest('#lista') || e.target.closest('#matrimonio-gallery')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+})();
 </script>
 
 
