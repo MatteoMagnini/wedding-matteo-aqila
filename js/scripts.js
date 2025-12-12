@@ -1,29 +1,5 @@
 $(document).ready(function () {
 	
-	var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
-	var icons = {
-          parking: {
-            url: 'svg/park1.svg',
-			scaledSize: new google.maps.Size(25,25),
-          },
-          biblio: {
-            url: 'svg/wr1.svg',
-			scaledSize: new google.maps.Size(25,25),
-          },
-          ztl: {
-            url: 'svg/no-entry.svg',
-			scaledSize: new google.maps.Size(20,20),
-          },
-          autovelox: {
-            url: 'svg/flasher.svg',
-			scaledSize: new google.maps.Size(25,25),
-          },
-          corte: {
-            url: 'svg/restaurant.svg',
-			scaledSize: new google.maps.Size(25,25),
-          }
-        };
-
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {
@@ -113,8 +89,8 @@ $(document).ready(function () {
     /***************** Header BG Scroll ******************/
 
     $(function () {
-        $(window).scroll(function () {
-            var scroll = $(window).scrollTop();
+        $(globalThis).scroll(function () {
+            const scroll = $(globalThis).scrollTop();
 
             if (scroll >= 20) {
                 $('section.navigation').addClass('fixed');
@@ -150,7 +126,7 @@ $(document).ready(function () {
         $('a[href*=#]:not([href=#])').click(function () {
             if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
 
-                var target = $(this.hash);
+                let target = $(this.hash);
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     $('html,body').animate({
@@ -164,28 +140,25 @@ $(document).ready(function () {
     });
 
     /********************** Social Share buttons ***********************/
-    var share_bar = document.getElementsByClassName('share-bar');
-    var po = document.createElement('script');
+    const share_bar = document.getElementsByClassName('share-bar');
+    let po = document.createElement('script');
     po.type = 'text/javascript';
     po.async = true;
     po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0];
+    let s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(po, s);
 
-    for (var i = 0; i < share_bar.length; i++) {
-        var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
+    for (const bar of share_bar) {
+        const html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
+            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(globalThis.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
             'style="width:105px; height:21px;">' +
             '</iframe>' +
 
-            '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
+            '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(globalThis.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
 
             '<div class="g-plusone" data-size="medium"></div>';
-
-        // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
-
-        share_bar[i].innerHTML = html;
-        share_bar[i].style.display = 'inline-block';
+        bar.innerHTML = html;
+        bar.style.display = 'inline-block';
     }
 
     /********************** Embed youtube video *********************/
@@ -203,7 +176,7 @@ $(document).ready(function () {
     });
 
     /********************** Add to Calendar **********************/
-    var myCalendar = createCalendar({
+    const myCalendar = createCalendar({
         options: {
             class: '',
             // You can pass an ID. If you don't, one will be generated for you
@@ -236,7 +209,7 @@ $(document).ready(function () {
     /********************** CONFERMA PRESENZA **********************/
     $('#confirm-form').on('submit', function (e) {
         e.preventDefault();
-        var data = $(this).serialize();
+        const data = $(this).serialize();
 
         if ($('#honeypot').val() !== "") {
             return;
@@ -248,7 +221,7 @@ $(document).ready(function () {
             .done(function (data) {
                 console.log(data);
                 $('#confirm-alert').html('');
-                $('#confirm-modal').modal('show');
+                document.getElementById('confirm-modal').showModal();
             })
             .fail(function (data) {
                 console.log(data);
@@ -260,9 +233,7 @@ $(document).ready(function () {
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
-        var data = $(this).serialize();
-		
-		// $('#rsvp-modal').modal('show');
+        const data = $(this).serialize();
 		
 		if($('#honeypot').val()!==""){
 			return;
@@ -270,21 +241,26 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Un attimo di pazienza!</strong> Stiamo salvando i tuoi dati.'));
 
-        // if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            // && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            // $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-        // } else {
             $.post('https://script.google.com/macros/s/AKfycbxMVh4FtN8rdoC8l1JCTEeQ8N_PtKhV4T0qWlBpLukV3Ko1RT1vpO_coergHwsPL_XQ/exec', data)
                 .done(function (data) {
                     console.log(data);
                     $('#alert-wrapper').html('');
-                    $('#rsvp-modal').modal('show');
+                    document.getElementById('rsvp-modal').showModal();
                 })
                 .fail(function (data) {
                     console.log(data);
                     $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
                 });
         // }
+    });
+
+    // Close button handlers for native dialog elements
+    $('#confirm-modal .close').on('click', function() {
+        document.getElementById('confirm-modal').close();
+    });
+    
+    $('#rsvp-modal .close').on('click', function() {
+        document.getElementById('rsvp-modal').close();
     });
 
 });
@@ -300,7 +276,7 @@ function initMap() {
         scrollwheel: false
       });
 
-      var marker = new google.maps.Marker({
+      const marker = new google.maps.Marker({
         position: castello,
         map: map,
         title: 'Castello Montenovo'
@@ -309,7 +285,7 @@ function initMap() {
 
 
 function initBBSRMap() {
-    var la_fiesta = {lat: 44.081114, lng: 12.14323};
+    let la_fiesta = {lat: 44.081114, lng: 12.14323};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,

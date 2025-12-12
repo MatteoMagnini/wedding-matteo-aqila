@@ -82,16 +82,16 @@
 #confirm-form select:disabled,
 #confirm-form textarea:disabled {
   background-color: #f5f5f5 !important;
-  color: #999 !important;
+  color: #666 !important;
   cursor: not-allowed !important;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 #confirm-form button:disabled {
   background-color: #ccc !important;
-  color: #666 !important;
+  color: #333 !important;
   cursor: not-allowed !important;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 /* Expiration message styling */
@@ -102,6 +102,22 @@
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Native dialog element styling */
+dialog {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: 100%;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog[open] {
+  display: block;
 }
 </style>
 
@@ -247,11 +263,11 @@
 
 <section class="rsvp text-center section-padding" id="conferma">
     <!-- Modal conferma partecipazione -->
-    <div id="confirm-modal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
+    <dialog id="confirm-modal" class="modal fade">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
+            <button type="button" class="close" aria-label="Close"><span>&times;</span></button>
             <div class="section-padding">
               <h3>Grazie!</h3>
               <p>Abbiamo ricevuto la conferma di partecipazione e inviato un'email con il riepilogo.<br>Non vediamo l'ora di festeggiare con voi!</p>
@@ -259,7 +275,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </dialog>
 
     <div class="container">
         <h3>Conferma di partecipazione</h3>
@@ -320,21 +336,20 @@
 
 <section class="rsvp text-center section-padding" id="lista">
 
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+    <dialog id="rsvp-modal" class="modal fade">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    <button type="button" class="close" aria-label="Close"><span>&times;</span>
                     </button>
                     <div class="section-padding">
                         <h3>Grazie!</h3>
                         <p>Abbiamo inviato un'email all'indirizzo indicato con le istruzioni per il bonifico. Grazie infinite per il vostro contributo, vi aspettiamo il giorno delle nozze!</p>
-                        <!--<div id="add-to-cal"></div>-->
                     </div>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    </dialog>
 
     <div class="container">
 		<h3>Lista viaggio</h3>
@@ -507,7 +522,7 @@
 </footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script>globalThis.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><script>')</script>
 <script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/jquery.flexslider-min.js"></script>
@@ -519,7 +534,7 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133285537-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
+  globalThis.dataLayer = globalThis.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
@@ -532,7 +547,7 @@
   const countdownElement = document.getElementById("countdown");
 
   const updateCountdown = () => {
-    const now = new Date().getTime();
+    const now = Date.now();
     const distance = deadline - now;
 
     if (distance < 0) {
